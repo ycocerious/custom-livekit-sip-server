@@ -1,0 +1,138 @@
+{
+  "nodeID": "NE_sFEyeasrsuKm",
+  "callID": "SCL_N6onpiReD2ya",
+  "fromIP": "117.205.73.106",
+  "toIP": "43.205.152.223:5060",
+  "fromHost": "43.205.152.223",
+  "fromUser": "anonymous",
+  "toHost": "43.205.152.223",
+  "toUser": "918025059011",
+  "sipTag": "b46d9e1ab63c41efb46a0c29375862",
+  "callID": "Call-ID: 23cee47c013d5c6e636a17577ed92837",
+  "sipTag": null,
+  "sipVersion": "SIP/2.0",
+  "headers": [
+    {
+      "DisplayName": "Extn1076",
+      "Address": {
+        "Scheme": "sip",
+        "Wildcard": false,
+        "HierarhicalSlashes": false,
+        "User": "anonymous",
+        "Password": "",
+        "Host": "43.205.152.223",
+        "Port": 0,
+        "UriParams": {},
+        "Headers": {}
+      },
+      "Params": { "tag": "b46d9e1ab63c41efb46a0c29375862" }
+    },
+    {
+      "DisplayName": "",
+      "Address": {
+        "Scheme": "sip",
+        "Wildcard": false,
+        "HierarhicalSlashes": false,
+        "User": "918025059011",
+        "Password": "",
+        "Host": "43.205.152.223",
+        "Port": 0,
+        "UriParams": {},
+        "Headers": {}
+      },
+      "Params": {}
+    },
+    { "SeqNo": 1, "MethodName": "INVITE" },
+    "23cee47c013d5c6e636a17577ed92837",
+    {
+      "DisplayName": "Extn1076",
+      "Address": {
+        "Scheme": "sip",
+        "Wildcard": false,
+        "HierarhicalSlashes": false,
+        "User": "",
+        "Password": "",
+        "Host": "117.205.73.117",
+        "Port": 5060,
+        "UriParams": { "asm": "1" },
+        "Headers": null
+      },
+      "Params": {}
+    },
+    {
+      "Address": {
+        "Scheme": "sip",
+        "Wildcard": false,
+        "HierarhicalSlashes": false,
+        "User": "",
+        "Password": "",
+        "Host": "117.205.73.117",
+        "Port": 5060,
+        "UriParams": { "ipcs-line": "12180", "lr": "", "transport": "udp" },
+        "Headers": null
+      }
+    },
+    {
+      "HeaderName": "Allow",
+      "Contents": "INVITE, ACK, OPTIONS, BYE, CANCEL, SUBSCRIBE, NOTIFY, REFER, INFO, PRACK, PUBLISH, UPDATE"
+    },
+    {
+      "HeaderName": "Supported",
+      "Contents": "100rel, histinfo, join, replaces, timer"
+    },
+    {
+      "HeaderName": "User-Agent",
+      "Contents": "Avaya CM/R020x.01.0.974.0 AVAYA-SM-10.1.2.0.1012016"
+    },
+    65,
+    {
+      "ProtocolName": "SIP",
+      "ProtocolVersion": "2.0",
+      "Transport": "UDP",
+      "Host": "117.205.73.117",
+      "Port": 5060,
+      "Params": { "branch": "z9hG4bK-s1632-001494341230-1--s1632-" }
+    },
+    { "HeaderName": "Accept-Language", "Contents": "en" },
+    {
+      "HeaderName": "Alert-Info",
+      "Contents": "<cid:internal@blrsafecity.local>;avaya-cm-alert-type=internal"
+    },
+    { "HeaderName": "Privacy", "Contents": "id" },
+    {
+      "HeaderName": "P-Asserted-Identity",
+      "Contents": "\"Extn1076\" <sip:43.205.152.223>"
+    },
+    { "HeaderName": "Session-Expires", "Contents": "1200;refresher=uac" },
+    { "HeaderName": "Min-SE", "Contents": "1200" },
+    {
+      "HeaderName": "History-Info",
+      "Contents": "<sip:918025059011@43.205.152.223>;index=1"
+    },
+    {
+      "HeaderName": "History-Info",
+      "Contents": "\"918025059011\" <sip:918025059011@blrsafecity.local>;index=1.1"
+    },
+    "application/sdp",
+    {
+      "HeaderName": "P-Charging-Vector",
+      "Contents": "icid-value=\"AAS:5065-70986db4ef413cb6c0069b462583729\""
+    },
+    {
+      "HeaderName": "User-to-User",
+      "Contents": "04C81E5472616E7366657265496E697461746564207C2037343036313534343433FA08000113C96756B5FBFB08000112876756B5CC;encoding=hex"
+    },
+    { "HeaderName": "Max-Breadth", "Contents": "60" },
+    { "HeaderName": "P-AV-Message-Id", "Contents": "1_1" },
+    {
+      "HeaderName": "P-Location",
+      "Contents": "SM;origlocname=\"Bengaluru\";origsiglocname=\"Bengaluru\";origmedialocname=\"Bengaluru\";termlocname=\"Bengaluru\";termsiglocname=\"Bengaluru\";smaccounting=\"true\""
+    },
+    239
+  ],
+  "body": "v=0\r\no=- 1733755731 1 IN IP4 172.16.1.246\r\ns=-\r\nc=IN IP4 117.205.73.117\r\nb=AS:64\r\nt=0 0\r\na=avf:avc=n prio=n\r\na=csup:avf-v0\r\nm=audio 35030 RTP/AVP 0 18 8 127\r\na=sendrecv\r\na=fmtp:18 annexb=yes\r\na=rtpmap:127 telephone-event/8000\r\na=ptime:20\r\n",
+  "source": "117.205.73.106:22796",
+  "destination": "43.205.152.223:5060",
+  "method": "INVITE",
+  "transport": "UDP"
+}
