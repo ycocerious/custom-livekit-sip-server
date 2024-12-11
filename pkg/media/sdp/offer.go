@@ -26,6 +26,7 @@ import (
 
 	"github.com/pion/sdp/v3"
 
+	"github.com/livekit/protocol/logger"
 	"github.com/livekit/sip/pkg/media"
 	"github.com/livekit/sip/pkg/media/dtmf"
 	"github.com/livekit/sip/pkg/media/rtp"
@@ -211,9 +212,9 @@ func (d *Offer) Answer(publicIp netip.Addr, rtpListenerPort int) (*Answer, *Medi
 			SessionVersion: d.SDP.Origin.SessionID + 2,
 			NetworkType:    "IN",
 			AddressType:    "IP4",
-			UnicastAddress: publicIp.String(),
+			UnicastAddress: "117.205.73.117",
 		},
-		SessionName: "LiveKit",
+		SessionName: "aeos_labs_sip_server",
 		ConnectionInformation: &sdp.ConnectionInformation{
 			NetworkType: "IN",
 			AddressType: "IP4",
@@ -228,6 +229,14 @@ func (d *Offer) Answer(publicIp netip.Addr, rtpListenerPort int) (*Answer, *Medi
 			},
 		},
 		MediaDescriptions: []*sdp.MediaDescription{mediaDesc},
+	}
+	answerStr, err := answer.Marshal()
+	if err == nil {
+		logger.Infow("⭐️ SDP Answer generated",
+			"sdp", string(answerStr),
+			"publicIP", publicIp,
+			"rtpListenerPort", rtpListenerPort,
+		)
 	}
 	src := netip.AddrPortFrom(publicIp, uint16(rtpListenerPort))
 	return &Answer{

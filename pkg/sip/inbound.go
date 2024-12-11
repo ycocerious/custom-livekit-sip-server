@@ -554,7 +554,7 @@ func (c *inboundCall) runMediaConn(offerData []byte, conf *config.Config, featur
 	c.log.Debugw("SDP offer", "sdp", string(offerData))
 
 	mp, err := NewMediaPort(c.log, c.mon, &MediaConfig{
-		IP:                  c.s.sconf.SignalingIP,
+		IP:                  netip.MustParseAddr("43.205.152.223"),
 		Ports:               conf.RTPPort,
 		MediaTimeoutInitial: c.s.conf.MediaTimeoutInitial,
 		MediaTimeout:        c.s.conf.MediaTimeout,
@@ -566,6 +566,8 @@ func (c *inboundCall) runMediaConn(offerData []byte, conf *config.Config, featur
 	c.media.EnableTimeout(false) // enabled once we accept the call
 	c.media.SetDTMFAudio(conf.AudioDTMF)
 
+	c.log.Infow("🙂 SDP offer", "sdp", string(offerData))
+
 	answer, mconf, err := mp.SetOffer(offerData)
 	if err != nil {
 		return nil, err
@@ -575,7 +577,7 @@ func (c *inboundCall) runMediaConn(offerData []byte, conf *config.Config, featur
 		return nil, err
 	}
 	c.mon.SDPSize(len(answerData), false)
-	c.log.Debugw("SDP answer", "sdp", string(answerData))
+	c.log.Infow("🙂 SDP answer", "sdp", string(answerData))
 
 	mconf.Processor = c.s.handler.GetMediaProcessor(features)
 	if err = c.media.SetConfig(mconf); err != nil {

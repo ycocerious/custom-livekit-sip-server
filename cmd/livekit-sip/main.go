@@ -39,13 +39,13 @@ import (
 func main() {
 	app := &cli.App{
 		Name:        "SIP",
-		Usage:       "LiveKit SIP",
+		Usage:       "Aeos Labs SIP",
 		Version:     version.Version,
-		Description: "SIP connectivity for LiveKit",
+		Description: "SIP connectivity for Aeos Labs",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:    "config",
-				Usage:   "LiveKit SIP yaml config file",
+				Usage:   "Aeos Labs SIP yaml config file",
 				EnvVars: []string{"SIP_CONFIG_FILE"},
 			},
 			&cli.StringFlag{
