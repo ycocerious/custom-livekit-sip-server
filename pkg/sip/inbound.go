@@ -555,6 +555,7 @@ func (c *inboundCall) runMediaConn(offerData []byte, conf *config.Config, featur
 
 	mp, err := NewMediaPort(c.log, c.mon, &MediaConfig{
 		IP:                  netip.MustParseAddr("43.205.152.223"),
+		// IP:                  c.s.sconf.SignalingIP,	
 		Ports:               conf.RTPPort,
 		MediaTimeoutInitial: c.s.conf.MediaTimeoutInitial,
 		MediaTimeout:        c.s.conf.MediaTimeout,
