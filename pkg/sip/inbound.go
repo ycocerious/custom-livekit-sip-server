@@ -554,8 +554,8 @@ func (c *inboundCall) runMediaConn(offerData []byte, conf *config.Config, featur
 	c.log.Debugw("SDP offer", "sdp", string(offerData))
 
 	mp, err := NewMediaPort(c.log, c.mon, &MediaConfig{
-		IP:                  netip.MustParseAddr("43.205.152.223"),
-		// IP:                  c.s.sconf.SignalingIP,	
+		// IP:                  netip.MustParseAddr("43.205.152.223"), //avaya custom
+		IP:                  c.s.sconf.SignalingIP,	
 		Ports:               conf.RTPPort,
 		MediaTimeoutInitial: c.s.conf.MediaTimeoutInitial,
 		MediaTimeout:        c.s.conf.MediaTimeout,
@@ -1184,11 +1184,11 @@ func (c *sipInbound) Accept(ctx context.Context, sdpData []byte, headers map[str
 
 	
 	// Contact: <sip:172.31.16.20:5060;transport=udp>
-	// hardcoded contact - they wanted this
-	r.AppendHeader(sip.NewHeader("Contact",hardcodedPublicContact))
+	// avaya custom
+	// r.AppendHeader(sip.NewHeader("Contact",hardcodedPublicContact))
 
 	// actual contact - works with twilio
-	// r.AppendHeader(c.contact)
+	r.AppendHeader(c.contact)
 
 	c.setDestFromVia(r)
 
